@@ -153,18 +153,9 @@ const useBubbleSort = (): UseBubbleSortReturnType => {
   
     let comparisonIndex = currentComparisonIndex;
     let loop = loopCount;
-  
-    if (comparisonIndex >= arrayToSort.length - loop - 1) {
-      // Move to the next comparison pair
-      loop++;
-      comparisonIndex = 0;
-      setSortedIndices((prev) => [arrayToSort.length - loop, ...prev]);
-      console.log("dupa");
-    }
-    console.log(comparisonIndex);
-    
-    // Determine if elements should be swapped
+
     const shouldSwap = arrayToSort[comparisonIndex] > arrayToSort[comparisonIndex + 1];
+
   
     setSwapElements(shouldSwap);
     if (shouldSwap) {
@@ -176,6 +167,14 @@ const useBubbleSort = (): UseBubbleSortReturnType => {
     }
     
     comparisonIndex++;
+  
+    if (comparisonIndex >= arrayToSort.length - loop - 1) {
+      loop++;
+      comparisonIndex = 0;
+      setSortedIndices((prev) => [arrayToSort.length - loop, ...prev]);
+      console.log("dupa");
+    }
+    console.log(comparisonIndex);
 
     setCurrentComparisonIndex(comparisonIndex);
     setCurrentLoopCount(loop);
