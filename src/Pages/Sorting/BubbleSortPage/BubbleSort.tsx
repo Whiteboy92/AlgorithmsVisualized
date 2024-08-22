@@ -60,7 +60,7 @@ const BubbleSort: React.FC = () => {
               iteration={iterationCount} 
               comparedElements={comparedNumbers} 
               swapElements={swapElements} 
-              timeComplexity={Time_Complexity.INSERTION_SORT.timeComplexity} // Use renamed constant
+              timeComplexity={Time_Complexity.BUBBLE_SORT.timeComplexity} // Use renamed constant
             />
           </LeftPanel>
           <ArrayDisplay>
@@ -72,7 +72,7 @@ const BubbleSort: React.FC = () => {
           </ArrayDisplay>
         </MainContent>
         <BottomPanel>
-          <BottomInfoPanel algorithm="INSERTION_SORT" />
+          <BottomInfoPanel algorithm="BUBBLE_SORT" />
         </BottomPanel>
       </Page>
     </>
